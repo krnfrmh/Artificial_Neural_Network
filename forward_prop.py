@@ -22,3 +22,6 @@ W1 = np.random.randn(D, M)
 b1 = np.random.randn(M)
 W2 = np.random.randn(M, K)
 b2 = np.random.randn(K)
+
+def sigmoid(a):
+  return 1 / (1 + np.exp(-a))
