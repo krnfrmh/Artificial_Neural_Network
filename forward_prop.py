@@ -25,3 +25,8 @@ b2 = np.random.randn(K)
 
 def sigmoid(a):
   return 1 / (1 + np.exp(-a))
+
+def forward(X, W1, b1, W2, b2):
+    # sigmoid hidden layer
+    Z = sigmoid(X.dot(W1) + b1) 
+    
