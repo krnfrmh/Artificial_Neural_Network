@@ -28,5 +28,10 @@ def sigmoid(a):
 
 def forward(X, W1, b1, W2, b2):
     # sigmoid hidden layer
-    Z = sigmoid(X.dot(W1) + b1) 
+    Z = sigmoid(X.dot(W1) + b1)
+    A = Z.dot(W2) + b2
+    expA = np.exp(A)
+    # softmax
+    Y = expA / expA.sum(axis=1, keepdims=True)
+    return Y
     
