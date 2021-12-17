@@ -35,3 +35,8 @@ def forward(X, W1, b1, W2, b2):
     Y = expA / expA.sum(axis=1, keepdims=True)
     return Y
     
+# determine the classification rate
+def classification_rate(Y, P):
+    n_correct = 0
+    n_total = 0
+    
