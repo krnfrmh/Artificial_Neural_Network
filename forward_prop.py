@@ -11,18 +11,6 @@ def get_data(Nclass):
   Y = np.array([0]*Nclass + [1]*Nclass + [2]*Nclass)
   return X, Y
 
-X, Y = get_data(Nclass)
-
-D = 2 # Input dimensionality
-M = 3 # Hidden layer size
-K = 3 # Number of classes
-
-# randomly initialize weights
-W1 = np.random.randn(D, M)
-b1 = np.random.randn(M)
-W2 = np.random.randn(M, K)
-b2 = np.random.randn(K)
-
 def sigmoid(a):
   return 1 / (1 + np.exp(-a))
 
@@ -45,3 +33,17 @@ def classification_rate(Y, P):
             n_correct += 1
     # num correct / num total
     return float(n_correct) / n_total
+
+X, Y = get_data(Nclass)
+
+D = 2 # Input dimensionality
+M = 3 # Hidden layer size
+K = 3 # Number of classes
+
+# randomly initialize weights
+W1 = np.random.randn(D, M)
+b1 = np.random.randn(M)
+W2 = np.random.randn(M, K)
+b2 = np.random.randn(K)
+
+P_Y_given_X = forward(X, W1, b1, W2, b2)
