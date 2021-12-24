@@ -47,3 +47,5 @@ W2 = np.random.randn(M, K)
 b2 = np.random.randn(K)
 
 P_Y_given_X = forward(X, W1, b1, W2, b2)
+# Taking argmax over softmax probabilities
+P = np.argmax(P_Y_given_X, axis=1)
