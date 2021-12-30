@@ -7,3 +7,7 @@ def forward(X, W1, b1, W2, b2):
     Z = 1 / (1 + np.exp(-1 * logit))
     # Output Layer
     A = Z.dot(W2) + b2
+    expA = np.exp(A)
+    # softmax
+    Y = expA / expA.sum(axis=1, keepdims=True)
+    return Y, Z
