@@ -16,3 +16,7 @@ def forward(X, W1, b1, W2, b2):
 def classification_rate(Y, P):
     n_correct = 0
     n_total = 0
+    for i in range(len(Y)):
+        n_total += 1
+        if Y[i] == P[i]:
+            n_correct += 1
