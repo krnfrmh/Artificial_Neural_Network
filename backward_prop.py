@@ -20,3 +20,5 @@ def classification_rate(Y, P):
         n_total += 1
         if Y[i] == P[i]:
             n_correct += 1
+    # num correct / num total
+    return float(n_correct) / n_total
