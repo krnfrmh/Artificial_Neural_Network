@@ -22,3 +22,9 @@ def classification_rate(Y, P):
             n_correct += 1
     # num correct / num total
     return float(n_correct) / n_total
+
+def derivative_w1(X, Z, T, Y, W2):
+    N, D = X.shape
+    M, K = W2.shape
+    
+    
