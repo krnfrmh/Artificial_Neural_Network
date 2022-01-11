@@ -26,5 +26,7 @@ def classification_rate(Y, P):
 def derivative_w1(X, Z, T, Y, W2):
     N, D = X.shape
     M, K = W2.shape
+    # Calculate gradient
+    dZ = (T - Y).dot(W2.T) * Z * (1 - Z)
     
     
