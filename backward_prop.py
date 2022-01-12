@@ -28,5 +28,7 @@ def derivative_w1(X, Z, T, Y, W2):
     M, K = W2.shape
     # Calculate gradient
     dZ = (T - Y).dot(W2.T) * Z * (1 - Z)
+    ret2 = X.T.dot(dZ)
+    return ret2
     
     
