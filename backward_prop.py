@@ -30,6 +30,9 @@ def derivative_w2(Z, T, Y):
     ret2 = Z.T.dot(T - Y)
     return ret2
 
+def derivative_b2(T, Y):
+    return (T - Y).sum(axis=0)
+
 def derivative_w1(X, Z, T, Y, W2):
     N, D = X.shape
     M, K = W2.shape
