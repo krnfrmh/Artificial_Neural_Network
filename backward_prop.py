@@ -41,4 +41,6 @@ def derivative_w1(X, Z, T, Y, W2):
     ret1 = X.T.dot(dZ)
     return ret1
     
+def derivative_b1(T, Y, W2, Z):
+    return ((T - Y).dot(W2.T) * Z * (1 - Z)).sum(axis=0)
     
