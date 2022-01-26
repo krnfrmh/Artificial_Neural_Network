@@ -44,3 +44,8 @@ def derivative_w1(X, Z, T, Y, W2):
 def derivative_b1(T, Y, W2, Z):
     return ((T - Y).dot(W2.T) * Z * (1 - Z)).sum(axis=0)
     
+def cost(T, Y):
+    tot = T * np.log(Y)
+    return tot.sum()
+    
+    
