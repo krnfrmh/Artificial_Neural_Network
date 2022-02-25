@@ -56,3 +56,20 @@ def generate_data(Nclass, D):
     X = np.vstack([X1, X2, X3])
     Y = np.array([0]*Nclass + [1]*Nclass + [2]*Nclass)
     return X, Y
+
+
+def main():
+    # create the data
+    Nclass = 500
+    D = 2 # dimensionality of input
+    M = 3 # hidden layer size
+    K = 3 # number of classes
+    
+    X, Y = generate_data(Nclass, D)
+    
+    N = len(Y)
+    # turn Y into an indicator matrix for training
+    T = np.zeros((N, K))
+    for i in range(N):
+        T[i, Y[i]] = 1
+
