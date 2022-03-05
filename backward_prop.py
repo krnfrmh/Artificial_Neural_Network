@@ -73,3 +73,11 @@ def main():
     for i in range(N):
         T[i, Y[i]] = 1
 
+    # randomly initialize weights
+    W1 = np.random.randn(D, M)
+    b1 = np.random.randn(M)
+    W2 = np.random.randn(M, K)
+    b2 = np.random.randn(K)
+
+    learning_rate = 1e-3
+    costs = []
