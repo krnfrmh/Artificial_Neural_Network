@@ -81,3 +81,11 @@ def main():
 
     learning_rate = 1e-3
     costs = []
+
+    for epoch in range(1000):
+        output, hidden = forward(X, W1, b1, W2, b2)
+        if epoch % 100 == 0:
+            c = cost(T, output)
+            P = np.argmax(output, axis=1)
+            r = classification_rate(Y, P)
+            costs.append(c)
