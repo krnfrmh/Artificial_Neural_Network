@@ -89,3 +89,9 @@ def main():
             P = np.argmax(output, axis=1)
             r = classification_rate(Y, P)
             costs.append(c)
+        
+        gW2 = derivative_w2(hidden, T, output)
+        gb2 = derivative_b2(T, output)
+        gW1 = derivative_w1(X, hidden, T, output, W2)
+        gb1 = derivative_b1(T, output, W2, hidden)
+        
